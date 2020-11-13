@@ -1,0 +1,60 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Register </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #ECECEC;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: white;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ input[type=text], input[type=password], input[type=email] {   
+        width: 100%;   
+        margin: 8px 0;
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }
+ .container {   
+        padding: 30px;   
+        background-color: #D7DCDC;  
+        margin:10px;
+        color:green;
+    }   
+</style>   
+</head>    
+<body> 
+    <div class="container" style="padding:10px">
+    <center> <h3>Register</h3> </center>
+    </div>
+    <form action="{{url_for('regval')}}" method="Post">  
+        <div class="container" >
+            <label for="email">Email : </label>
+            <input type="email" placeholder="something@example.com" name="email" required>
+            <label for="username">Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label for="password">Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required> 
+             <label for="rpassword">Confirm Password : </label>
+            <input type="password" placeholder="Enter Password again" name="rpassword" required>
+            <span style="color:red">{{errormsg}}</span>
+            <button name="registerbtn">Register</button>
+            Forgot <a href="#"> password? </a> <br>
+            Already Registered? <a href="{{url_for('login')}}">Login Here</a>
+        </div>
+    </form>
+</body>
+</html>
