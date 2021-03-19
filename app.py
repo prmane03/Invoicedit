@@ -36,7 +36,7 @@ class infotable(db.Model):
 	date = db.Column(db.Text)
 	
 	
-#db.create_all()
+db.create_all()
 #db.session.commit()
 
 @app.route("/")
